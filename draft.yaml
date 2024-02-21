@@ -1,5 +1,116 @@
 models:
-  
+  Store:
+    user_id: foreign
+    name: string
+    slug: string
+    description: text
+    relationships:
+      hasMany: Product
+
+  Product:
+    store_id: foreign
+    name: string
+    slug: string
+    description: text
+
+  Employee:
+    name: string
+    deleted_at: softDeletes
+
+  Department:
+    name: string default:'Our Department'
+    parent_department_id: id foreign:departments nullable
+    relationships:
+      hasMany: Employee
+
+  Attendance:
+    employee_id: foreign
+    check_time: dateTime
+    check_type: integer
+    verify_code: string
+    sensor_id: integer
+    memo_info: text nullable
+
+  ScheduleHour:
+    name: string
+    start_time: time
+    end_time: time
+    late_minutes: integer default:0
+    early_minutes: integer default:0
+    check_in: integer default:1
+    check_out: integer default:1
+    color: string default:#3399ff
+    check_in_time1: time
+    check_in_time2: time
+    check_out_time1: time
+    check_out_time2: time
+    work_day: integer default:1
+    work_mins: integer default:0
+
+  ScheduleShift:
+    name: string
+    start_date: date default:2020/1/1
+    end_date: date default:2099/12/31
+    cycle: integer default:1
+    unit: integer default:1
+    relationships:
+      hasMany: ScheduleShiftHour
+
+  ScheduleShiftHour:
+    schedule_shift_id: foreign
+    start_time: time
+    end_time: time
+    s_days: integer
+    e_days: integer
+    schedule_hour_id: foreign
+    overtime: integer default:0
+
+  ScheduleEmployee:
+    employee_id: foreign
+    schedule_shift_id: foreign
+    start_date: date default:2020/1/1
+    end_date: date default:2099/12/31
+
+  ScheduleEmployeeTemp:
+    employee_id: foreign
+    come_time: dateTime
+    leave_time: dateTime
+    schedule_hour_id: foreign
+    overtime: integer default:0
+
+  LeaveType:
+    name: string
+    min_unit: integer default:1
+    unit: integer default:1
+    symbol: string
+    color: string default:#ff9933
+
+  AttendanceLeave:
+    employee_id: foreign
+    leave_type_id: foreign
+    start_time: dateTime
+    end_time: dateTime
+    note: text nullable
+
+  Company:
+    name: string default:'Our Company'
+    logo: string nullable
+    address: string nullable
+    telp: string nullable
+    website: string nullable
+    description: text nullable
+
+  Location:
+    name: string
+    address: string
+    geolocation: string
+
+  Sensor:
+    status: integer
+    device_code: string
+    location_id: foreign
+    code: string
+
 
 controllers:
   # ...
