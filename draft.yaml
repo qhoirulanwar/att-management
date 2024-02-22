@@ -15,13 +15,19 @@ models:
 
   Employee:
     name: string
+    user_id: foreign
+    department_id: foreign
+    location_id: foreign
     deleted_at: softDeletes
 
   Department:
-    name: string default:'Our Department'
+    name: string
+    structure: string
     parent_department_id: id foreign:departments nullable
     relationships:
       hasMany: Employee
+    relationships:
+      hasMany: Department
 
   Attendance:
     employee_id: foreign
@@ -92,8 +98,8 @@ models:
     end_time: dateTime
     note: text nullable
 
-  Company:
-    name: string default:'Our Company'
+  Organization:
+    name: string default:'Our Organization'
     logo: string nullable
     address: string nullable
     telp: string nullable
@@ -103,9 +109,14 @@ models:
   Location:
     name: string
     address: string
-    geolocation: string
+    geolocation: string nullable
+    relationships:
+      hasMany: Employee
+    relationships:
+      hasMany: Sensor
 
   Sensor:
+    user_id: foreign
     status: integer
     device_code: string
     location_id: foreign
