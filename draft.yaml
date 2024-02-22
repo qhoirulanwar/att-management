@@ -25,9 +25,7 @@ models:
     structure: string
     parent_department_id: id foreign:departments nullable
     relationships:
-      hasMany: Employee
-    relationships:
-      hasMany: Department
+      hasMany: Employee, Department
 
   Attendance:
     employee_id: foreign
@@ -111,9 +109,7 @@ models:
     address: string
     geolocation: string nullable
     relationships:
-      hasMany: Employee
-    relationships:
-      hasMany: Sensor
+      hasMany: Employee,Sensor
 
   Sensor:
     user_id: foreign
