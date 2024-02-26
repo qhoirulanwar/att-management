@@ -1,0 +1,29 @@
+{
+    "employees": [
+        {
+            "id": "1",
+            "name": "Muhammad John Doe",
+            "dates": [
+                {
+                    "date": "2024-01-01",
+                    "attendances": [
+                        {
+                            "status": "Hadir",
+                            "initial": "H",
+                            "schedule_shift": {},
+                            "schedule_hour": {},
+                            "attendance": {}
+                        }
+                    ]
+                }
+            ],
+            "total": [
+                {
+                    "name": "Hadir",
+                    "initial": "H",
+                    "total": 0
+                }
+            ]
+        }
+    ]
+}

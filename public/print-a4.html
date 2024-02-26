@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printable A4 Page</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+
+        @media screen {
+            div.divFooter {
+                display: none;
+            }
+        }
+
+        @media print {
+            .divFooter {
+                position: fixed;
+                bottom: 10px;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding: 3mm 11mm;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 11px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px 4px;
+            text-align: center;
+        }
+
+        /* h1,
+        p {
+            text-align: center;
+        } */
+    </style>
+</head>
+
+<body>
+    <h2>Laporan Kehadiran Karyawan</h2>
+    <table>
+        <tr>
+            <th rowspan="2">Nama Karyawan</th>
+            <th colspan="31">Tanggal</th>
+            <th colspan="4">Jumlah</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>11</th>
+            <th>12</th>
+            <th>13</th>
+            <th>14</th>
+            <th>15</th>
+            <th>16</th>
+            <th>17</th>
+            <th>18</th>
+            <th>19</th>
+            <th>20</th>
+            <th>21</th>
+            <th>22</th>
+            <th>23</th>
+            <th>24</th>
+            <th>25</th>
+            <th>26</th>
+            <th>27</th>
+            <th>28</th>
+            <th>29</th>
+            <th>30</th>
+            <th>31</th>
+            <th>H</th>
+            <th>A</th>
+            <th>I</th>
+            <th>S</th>
+        </tr>
+        <tr>
+            <td>Muhammad John Doe</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>20</td>
+            <td>5</td>
+            <td>3</td>
+            <td>2</td>
+        </tr>
+        <!-- Tambahkan baris untuk karyawan lain jika diperlukan -->
+    </table>
+
+    <div class="divFooter">UNCLASSIFIED</div>
+</body>
+
+</html>

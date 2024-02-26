@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\pingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/ping', function () {
+    return (new pingController())->getSchedulesEmployeeByDateRange(1, '2024-02-01', '2024-02-29');
 });
