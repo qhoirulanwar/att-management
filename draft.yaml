@@ -1,17 +1,4 @@
 models:
-  Store:
-    user_id: foreign
-    name: string
-    slug: string
-    description: text
-    relationships:
-      hasMany: Product
-
-  Product:
-    store_id: foreign
-    name: string
-    slug: string
-    description: text
 
   Employee:
     name: string
@@ -30,9 +17,9 @@ models:
   Attendance:
     employee_id: foreign
     check_time: dateTime
-    check_type: integer
-    verify_code: string
-    sensor_id: integer
+    check_type: string default:'I'
+    verify_code: integer default:0
+    sensor_id: integer nullable
     memo_info: text nullable
 
   ScheduleHour:
@@ -50,11 +37,12 @@ models:
     check_out_time2: time
     work_day: integer default:1
     work_mins: integer default:0
+    sensor_id: foreign nullable
 
   ScheduleShift:
     name: string
     start_date: date default:2020/1/1
-    end_date: date default:2099/12/31
+    end_date: date nullable # default:2099/12/31
     cycle: integer default:1
     unit: integer default:1
     relationships:
