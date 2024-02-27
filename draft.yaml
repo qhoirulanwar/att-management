@@ -108,4 +108,7 @@ models:
 
 
 controllers:
+
+  # Department:
+  #   resource: api.index, api.store, api.show, api.update, api.destroy
   # ...
